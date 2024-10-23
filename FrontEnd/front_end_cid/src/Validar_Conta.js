@@ -26,7 +26,7 @@ const Validar_Conta = () => {
             <img src="images-removebg-preview.png" alt="Logo UCAM" className="w-16 h-16 lg:w-24 lg:h-24" />
             <img src="UCAN-LOGO_.png" alt="Logo Faculdade de Direito" className="w-16 h-16 lg:w-24 lg:h-24" />
           </div>
-          <h1 className="text-lg lg:text-2xl font-bold text-white text-center px-4">
+          <h1 className="text-lg lg:text-2xl font-bold text-white text-center px-4" style={{ color: 'white' }}>
             REPOSITORIO DE INVESTIGAÇÃO 
             CIENTIFICA DO DIREITO CID
           </h1>
@@ -36,8 +36,10 @@ const Validar_Conta = () => {
       {/* Lado direito - Formulário de verificação */}
       <div className="flex-1 flex items-center justify-center p-4 lg:p-8">
         <div className="w-full max-w-md">
-          <h1 className="text-2xl lg:text-3xl font-bold mb-6 text-gray-800 text-center lg:text-left">Código de Confirmação de Conta</h1>
-          <h3 className="text-center lg:text-left">Digite o código enviado no seu email</h3>
+          <h1 className="text-2xl lg:text-3xl font-bold mb-6 text-gray-800 text-center lg:text-left" 
+            style={{ textDecoration: 'none' }} // Remover sublinhado do título "Criar Conta"
+          >Código de Confirmação de Conta</h1>
+          <h3 className="text-center lg:text-left" >Digite o código enviado no seu email</h3>
           <br></br>
           <div className="flex justify-center lg:justify-between mb-6">
             {/* Inputs para códigos de validação */}

@@ -154,7 +154,7 @@ nav ul li:hover .submenu {
   padding: 10px; /* Espaçamento interno */
   border: 2px solid #8B0000; /* Cor da borda */
   border-radius: 20px; /* Bordas bem arredondadas */
-  width: 500px; /* Largura do campo de pesquisa */
+  width: 700px; /* Largura do campo de pesquisa */
   font-size: 1em; /* Tamanho da fonte */
   outline: none; /* Remove o contorno ao clicar */
   margin: 50px 0; /* Reduz a margem superior para 10px */

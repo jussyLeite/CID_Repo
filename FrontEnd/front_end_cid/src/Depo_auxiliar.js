@@ -1,21 +1,16 @@
 import React from 'react';
-import './Home_logado.css';
+import './Repositorio.css'; // O CSS será atualizado abaixo
 import { useNavigate } from 'react-router-dom'; // Importe useNavigate
+import Depositar from './Depositar';
 
-const Home_logado = () => {
+const Depo_auxiliar = () => {
 
     const navigate = useNavigate();
 
-    const Comunidade = () => {
-      navigate('/Comunidade'); // Navegue para a rota de Comunidade
+    const Home_logado = () => {
+        navigate('/Home_logado'); // Navegue para a rota do repositório
     };
-    const Repo_auxiliar = () => {
-        navigate('/Repo_auxiliar'); // Navegue para a rota do repositório
-    };
-    const Depo_auxiliar = () => {
-        navigate('/Depo_auxiliar'); // Navegue para a rota do repositório
-    };
-      
+
     return (
         <div className="body">
             <header>
@@ -27,7 +22,7 @@ const Home_logado = () => {
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="/Home_logado" className="button">Início</a></li>
+                        <li><a href="#" className="button" onClick={Home_logado}>Início</a></li>
                         <li>
                             <a href="#">Navegar ▼</a>
                             <ul className="submenu">
@@ -60,18 +55,9 @@ const Home_logado = () => {
                 </nav>
             </header>
 
-            <div className="search-bar">
-                <h2 className="welcome-text">Bem-vindo Adilson</h2>
-                <input type="text" placeholder="Pesquisar..." className="search-input" />
-                
-                
-                <div className="action-buttons">
-                    <button className="green-button" onClick={Depo_auxiliar}>Iniciar Publicação</button>
-                    <button className="menu-button" onClick={Repo_auxiliar}>Artigos Publicados</button>
-                </div>
-                
-                <img src="law1.jpg" alt="Imagem Superior Direita" className="right-image" />
-            </div>
+            <main>
+                <Depositar />
+            </main>
 
             <footer>
                 <div className="footer-overlay"></div>
@@ -95,7 +81,9 @@ const Home_logado = () => {
     );
 };
 
-export default Home_logado;
+export default Depo_auxiliar;
+
+
 
 
 
