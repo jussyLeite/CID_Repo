@@ -2,6 +2,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  padding-bottom: 100px; /* Ajuste o valor conforme necessário */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -54,81 +55,6 @@ nav ul li a {
   border-radius: 50%;
 }
 
-/* Botão "Início" */
-.button {
-  padding: 10px 15px;
-  background-color: white;
-  color: #8B0000;
-  border-radius: 5px;
-}
-
-.submenu {
-  display: none;
-}
-
-nav ul li:hover .submenu {
-  display: block;
-}
-
-.submenu li a {
-  color: #8B0000;
-}
-
-/* Barra de pesquisa */
-.search-bar {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 100px 0;
-}
-
-.search-input {
-  padding: 10px;
-  border: 2px solid #8B0000;
-  border-radius: 20px;
-  width: 700px;
-  font-size: 1em;
-  margin-bottom: 20px;
-}
-
-/* Texto de boas-vindas */
-.welcome-text {
-  font-size: 2.5em;
-  color: #8B0000;
-  margin-bottom: 30px; /* Aumenta o espaçamento para separar da barra de pesquisa */
-  text-align: center;
-}
-
-/* Botões de ação */
-.action-buttons {
-  display: flex;
-  align-items: center;
-  gap: 100px;
-  margin-top: 30px; /* Adiciona um espaçamento superior para os botões */
-}
-
-.green-button, .menu-button {
-  padding: 10px 30px;
-  border-radius: 15px;
-  border: none;
-}
-
-.green-button {
-  background-color: green;
-  color: white;
-}
-
-.menu-button {
-  background-color: #8B0000;
-  color: white;
-}
-
-.right-image {
-  width: 650px;
-  height: 350px;
-  margin-top: 30px; /* Ajusta o espaçamento da imagem */
-}
-
 /* Rodapé */
 footer {
   background-image: url('istockphoto-538203075-612x612.jpg');
@@ -162,6 +88,7 @@ footer {
   text-decoration: none;
   font-weight: bold;
 }
+
 
 
 

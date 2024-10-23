@@ -1,0 +1,246 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Cabeçalho */
+header {
+  background-color: #8B0000;
+  color: white;
+  padding: 5px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-menu {
+  width: 50px;
+}
+
+.menu-text {
+  margin-left: 10px;
+  font-size: 0.9em;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+/* Botão "Início" */
+.button {
+  padding: 10px 15px;
+  background-color: white;
+  color: #8B0000;
+  border-radius: 5px;
+}
+
+.submenu {
+  display: none;
+}
+
+nav ul li:hover .submenu {
+  display: block;
+}
+
+.submenu li a {
+  color: #8B0000;
+}
+
+/* Barra de pesquisa */
+.search-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.search-input {
+  padding: 10px;
+  border: 2px solid #8B0000;
+  border-radius: 20px;
+  width: 700px;
+  font-size: 1em;
+  margin-bottom: 20px;
+}
+
+/* Comunidade */
+.container {
+  margin-top: 20px;
+  padding-bottom: 100px;
+}
+
+h1.text-2xl {
+  color: #8B0000;
+  text-decoration: underline;
+  text-decoration-color: #8B0000;
+}
+
+.grid {
+  display: grid; /* Usando grid para controle mais fácil */
+  grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+  gap: 20px; /* Espaçamento entre os itens */
+}
+
+.community-card {
+  display: flex; /* Mantém o layout flexível */
+  flex-direction: row; /* Alinha o conteúdo em linha */
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 100%; /* Garante que as divs tenham a mesma altura */
+}
+
+.image-container {
+  flex: 1; /* A imagem ocupa uma parte da div */
+  max-width: 40%; /* Define um tamanho máximo para a imagem */
+}
+
+.content-container {
+  flex: 1; /* O conteúdo ocupará o espaço restante */
+  padding: 16px;
+  display: flex; /* Adiciona flex ao conteúdo */
+  flex-direction: column; /* Alinha o conteúdo em coluna */
+  justify-content: space-between; /* Garante que o conteúdo se distribua uniformemente */
+}
+/*
+.community-image {
+  width: 100%;
+  height: auto; /* Remover a altura fixa para que a imagem se ajuste */
+ /* max-height: 200px;  Define uma altura máxima para a imagem */
+ /* object-fit: cover;  Garante que a imagem cubra todo o espaço 
+}
+*/
+
+.community-image {
+  width: 100%;              /* A imagem ocupa toda a largura do contêiner */
+  height: 200px;           /* Define uma altura fixa para todas as imagens */
+  object-fit: cover;       /* Faz com que a imagem cubra completamente o espaço sem distorcer */
+}
+
+.bg-red-800 {
+  background-color: #8B0000; /* Cor do fundo para as contagens de coleções */
+}
+
+/* Rodapé */
+footer {
+  background-image: url('istockphoto-538203075-612x612.jpg');
+  background-size: cover;
+  color: white;
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-logo {
+  width: 50px;
+}
+
+.footer-menu ul {
+  list-style: none;
+  display: flex;
+  padding: 0;
+}
+
+.footer-menu ul li {
+  margin: 0 10px;
+}
+
+.footer-menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer-text {
+  text-align: right;
+}
+
+.underline-menu {
+  color: #8B0000;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* Estilos Adicionais para as Comunidades */
+.community-card {
+  transition: transform 0.2s; /* Adiciona uma transição suave ao passar o mouse */
+}
+
+.community-card:hover {
+  transform: scale(1.02); /* Aumenta a escala ao passar o mouse */
+}
+
+.text-lg {
+  color: #333; /* Define a cor do título das comunidades */
+}
+
+.text-gray-600 {
+  color: #666; /* Define a cor da descrição das comunidades */
+}
+
+.text-sm {
+  font-size: 0.875rem; /* Ajusta o tamanho da fonte */
+}
+
+.bg-red-800 {
+  background-color: #8B0000; /* Cor do fundo para as contagens de coleções */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -2,7 +2,6 @@ import React from 'react';
 import { Eye } from 'lucide-react';
 import { useNavigate } from 'react-router-dom'; // Importe useNavigate
 
-
 const Login_repositorio = () => {
   const navigate = useNavigate();
 
@@ -29,7 +28,10 @@ const Login_repositorio = () => {
             <img src="images-removebg-preview.png" alt="Logo UCAM" className="w-16 h-16 lg:w-24 lg:h-24" />
             <img src="UCAN-LOGO_.png" alt="Logo Faculdade de Direito" className="w-16 h-16 lg:w-24 lg:h-24" />
           </div>
-          <h1 className="text-lg lg:text-2xl font-bold text-white text-center px-4">
+          <h1 
+            className="text-lg lg:text-2xl font-bold text-center px-4"
+            style={{ color: 'white' }} // Define a cor branca explicitamente
+          >
             REPOSITORIO DE INVESTIGAÇÃO CIENTIFICA DO DIREITO CID
           </h1>
         </div>
@@ -38,7 +40,12 @@ const Login_repositorio = () => {
       {/* Lado direito - Formulário de login */}
       <div className="flex-1 flex items-center justify-center p-4 lg:p-8">
         <div className="w-full max-w-md">
-          <h1 className="text-2xl lg:text-3xl font-bold mb-6 text-gray-800 text-center lg:text-left">Login</h1>
+          <h1 
+            className="text-2xl lg:text-3xl font-bold mb-6 text-gray-800 text-center lg:text-left"
+            style={{ textDecoration: 'none' }} // Remover sublinhado do título "Login"
+          >
+            Login
+          </h1>
           <form>
             <div className="mb-4">
               <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
@@ -64,7 +71,7 @@ const Login_repositorio = () => {
             <button type="submit" className="w-full bg-red-800 text-white py-2 rounded-full hover:bg-red-900" onClick={Home_logado}>INICIAR SESSÃO</button>
           </form>
           <div className="mt-4 text-center">
-            <a href="#" className="text-sm text-red-800 hover:underline">Esqueceu a senha?</a>
+            <a href="#" className="text-sm text-red-800 hover:underline" style={{ textDecoration: 'none' }}>Esqueceu a senha?</a>
           </div>
           <div className="mt-6 flex flex-col lg:flex-row justify-between">
             <button className="mb-2 lg:mb-0 flex-1 mr-0 lg:mr-2 border border-red-300 py-2 rounded-full flex items-center justify-center hover:bg-gray-50">
@@ -84,3 +91,5 @@ const Login_repositorio = () => {
 };
 
 export default Login_repositorio;
+
+

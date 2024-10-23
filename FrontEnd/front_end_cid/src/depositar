@@ -1,0 +1,232 @@
+import React, { useState } from 'react';
+import { X, Upload } from 'lucide-react';
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardContent,
+} from "@/components/ui/card";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
+  Alert,
+  AlertDescription,
+} from "@/components/ui/alert";
+
+const ArticleDeposit = () => {
+  const [showAlert, setShowAlert] = useState(true);
+  const [selectedFile, setSelectedFile] = useState(null);
+
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    setSelectedFile(file);
+  };
+
+  const handleDragOver = (event) => {
+    event.preventDefault();
+  };
+
+  const handleDrop = (event) => {
+    event.preventDefault();
+    const file = event.dataTransfer.files[0];
+    setSelectedFile(file);
+  };
+
+  return (
+    <div className="max-w-4xl mx-auto p-4">
+      <Card>
+        <CardHeader>
+          <CardTitle>Depositar Artigo</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-6">
+            {/* Alert Message */}
+            {showAlert && (
+              <Alert className="bg-orange-100 border-orange-200">
+                <AlertDescription className="flex justify-between items-center">
+                  <span>
+                    O depósito do seu arquivo passará em uma análise, com algumas etapas, caso passe
+                    em todas as etapas será publica na coleção selecionada.
+                  </span>
+                  <button 
+                    onClick={() => setShowAlert(false)}
+                    className="text-gray-500 hover:text-gray-700"
+                  >
+                    <X className="h-4 w-4" />
+                  </button>
+                </AlertDescription>
+              </Alert>
+            )}
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Left Column */}
+              <div className="space-y-4">
+                <div>
+                  <label className="text-sm text-gray-600">Selecionar a coleção referência</label>
+                  <Select>
+                    <SelectTrigger className="w-full">
+                      <SelectValue placeholder="Coleção" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="colecao1">Coleção 1</SelectItem>
+                      <SelectItem value="colecao2">Coleção 2</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                <div>
+                  <label className="text-sm text-gray-600">Digitar o título</label>
+                  <input
+                    type="text"
+                    placeholder="Título do trabalho"
+                    className="w-full p-2 border rounded-md"
+                  />
+                </div>
+
+                <div>
+                  <label className="text-sm text-gray-600">Selecionar o autor</label>
+                  <Select>
+                    <SelectTrigger className="w-full">
+                      <SelectValue placeholder="Autor(es)" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="autor1">Autor 1</SelectItem>
+                      <SelectItem value="autor2">Autor 2</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                <div>
+                  <label className="text-sm text-gray-600">Resumo</label>
+                  <textarea
+                    placeholder="Digite aqui no cdte o resumo do trabalho..."
+                    className="w-full p-2 border rounded-md h-32"
+                  />
+                </div>
+
+                <div>
+                  <label className="text-sm text-gray-600">Palavras Chaves</label>
+                  <textarea
+                    placeholder="Digite as palavras chaves do trabalho"
+                    className="w-full p-2 border rounded-md h-24"
+                  />
+                </div>
+              </div>
+
+              {/* Right Column */}
+              <div className="space-y-4">
+                <div>
+                  <label className="text-sm text-gray-600">Digitar o título</label>
+                  <Select>
+                    <SelectTrigger className="w-full">
+                      <SelectValue placeholder="Orientador(es)" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="orientador1">Orientador 1</SelectItem>
+                      <SelectItem value="orientador2">Orientador 2</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                <div>
+                  <label className="text-sm text-gray-600">Data de publicação</label>
+                  <input
+                    type="date"
+                    className="w-full p-2 border rounded-md"
+                  />
+                </div>
+
+                <div>
+                  <label className="text-sm text-gray-600">Tipo de documento</label>
+                  <Select>
+                    <SelectTrigger className="w-full">
+                      <SelectValue placeholder="Dissertação" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="dissertacao">Dissertação</SelectItem>
+                      <SelectItem value="tese">Tese</SelectItem>
+                      <SelectItem value="artigo">Artigo</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                <div>
+                  <label className="text-sm text-gray-600">Área de Pesquisa</label>
+                  <Select>
+                    <SelectTrigger className="w-full">
+                      <SelectValue placeholder="Nenhuma selecionada" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="area1">Área 1</SelectItem>
+                      <SelectItem value="area2">Área 2</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                <div>
+                  <label className="text-sm text-gray-600">Idioma</label>
+                  <Select>
+                    <SelectTrigger className="w-full">
+                      <SelectValue placeholder="Nenhuma selecionada" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="portugues">Português</SelectItem>
+                      <SelectItem value="english">English</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+              </div>
+            </div>
+
+            {/* File Upload Section */}
+            <div className="mt-8">
+              <div
+                className="border-2 border-dashed rounded-lg p-8 text-center"
+                onDragOver={handleDragOver}
+                onDrop={handleDrop}
+              >
+                <input
+                  type="file"
+                  onChange={handleFileChange}
+                  className="hidden"
+                  id="fileInput"
+                />
+                <label
+                  htmlFor="fileInput"
+                  className="cursor-pointer flex flex-col items-center"
+                >
+                  <Upload className="h-8 w-8 text-gray-400 mb-2" />
+                  <span className="text-lg font-medium">
+                    Selecionar o ficheiro to upload
+                  </span>
+                  <span className="text-sm text-gray-500">
+                    Ou arraste o ficheiro para aqui
+                  </span>
+                </label>
+                {selectedFile && (
+                  <div className="mt-4 text-sm text-gray-600">
+                    Arquivo selecionado: {selectedFile.name}
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* Submit Button */}
+            <div className="mt-6">
+              <button className="px-6 py-2 bg-green-700 text-white rounded-md hover:bg-green-800">
+                Enviar
+              </button>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+  );
+};
+
+export default ArticleDeposit;
